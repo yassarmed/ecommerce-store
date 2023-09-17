@@ -1,9 +1,10 @@
-// Content.jsx
+
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { ProductsIndex } from "./ProductsIndex";
 import { Modal } from "./Modal";
+import { ProductsShow } from "./ProductsShow";
 
 export function Content() {
   const [products, setProducts] = useState([]);
@@ -35,7 +36,7 @@ export function Content() {
     <div>
       <ProductsIndex products={products} onShowProduct={handleShowProduct} />
       <Modal show={isProductsShowVisible} onClose={handleClose}>
-        <h1>Test</h1>
+        <ProductsShow product={currentProduct}/>
       </Modal>
     </div>
   );
